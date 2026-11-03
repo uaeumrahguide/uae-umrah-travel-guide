@@ -230,11 +230,12 @@
 
     .featured-section { background: var(--cream); }
 
-    .article-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
+   .article-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 380px);
+  justify-content: center;
+  gap: 25px;
+}
 
     .article-card {
       background: white;
@@ -371,7 +372,7 @@
       <nav aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="#categories">Categories</a>
-        <a href="#featured">id="featured"</a>
+      <a href="#featured">Latest Articles</a>
         <a href="#about">About Us</a>
       </nav>
     </div>
