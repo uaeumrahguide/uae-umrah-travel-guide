@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,9 +33,15 @@
       --muted: #6c7888;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       font-family: 'DM Sans', sans-serif;
@@ -43,7 +50,10 @@
       line-height: 1.7;
     }
 
-    a { color: inherit; text-decoration: none; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
     .topbar {
       background: var(--navy);
@@ -80,7 +90,9 @@
       line-height: 1.2;
     }
 
-    .logo span { color: var(--gold); }
+    .logo span {
+      color: var(--gold);
+    }
 
     .logo small {
       display: block;
@@ -104,7 +116,9 @@
       color: var(--navy);
     }
 
-    nav a:hover { color: var(--gold); }
+    nav a:hover {
+      color: var(--gold);
+    }
 
     .hero {
       background:
@@ -159,7 +173,9 @@
       transition: .2s;
     }
 
-    .button:hover { background: white; }
+    .button:hover {
+      background: white;
+    }
 
     .section {
       max-width: 1200px;
@@ -228,16 +244,24 @@
       font-size: 12px;
     }
 
-    .featured-section { background: var(--cream); }
+    .featured-section {
+      background: var(--cream);
+    }
 
-   .article-grid {
-  display: grid;
-grid-template-columns: repeat(2, minmax(280px, 380px));
-  justify-content: center;
-  gap: 25px;
-}
+    /* ARTICLE GRID - TWO COLUMNS ON DESKTOP */
+
+    .article-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      width: 100%;
+      max-width: 785px;
+      margin: 0 auto;
+      gap: 25px;
+      align-items: stretch;
+    }
 
     .article-card {
+      min-width: 0;
       background: white;
       border: 1px solid #ececec;
       transition: .2s;
@@ -255,7 +279,9 @@ grid-template-columns: repeat(2, minmax(280px, 380px));
       display: block;
     }
 
-    .article-content { padding: 23px; }
+    .article-content {
+      padding: 23px;
+    }
 
     .article-category {
       color: #a17b37;
@@ -294,7 +320,10 @@ grid-template-columns: repeat(2, minmax(280px, 380px));
       padding: 75px 25px;
     }
 
-    .about-inner { max-width: 750px; margin: auto; }
+    .about-inner {
+      max-width: 750px;
+      margin: auto;
+    }
 
     .about h2 {
       font-family: 'Playfair Display', serif;
@@ -320,7 +349,9 @@ grid-template-columns: repeat(2, minmax(280px, 380px));
       margin-bottom: 12px;
     }
 
-    footer .footer-logo span { color: var(--gold); }
+    footer .footer-logo span {
+      color: var(--gold);
+    }
 
     footer p {
       color: #bdc8d7;
@@ -334,24 +365,71 @@ grid-template-columns: repeat(2, minmax(280px, 380px));
       padding-top: 20px;
     }
 
+    /* TABLET */
+
     @media (max-width: 800px) {
-      .category-grid { grid-template-columns: repeat(2, 1fr); }
-      .article-grid { grid-template-columns: repeat(2, 1fr); }
-      nav { gap: 13px; }
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .article-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      nav {
+        gap: 13px;
+      }
     }
 
+    /* MOBILE */
+
     @media (max-width: 600px) {
-      .nav-container { flex-direction: column; }
-      nav { flex-wrap: wrap; justify-content: center; gap: 12px 18px; }
-      nav a { font-size: 12px; }
-      .hero { min-height: 470px; }
-      .hero-content { padding: 60px 22px; }
-      .hero p { font-size: 14px; }
-      .section { padding: 55px 18px; }
-      .section-heading h2 { font-size: 29px; }
-      .category-grid { gap: 12px; }
-      .article-grid { grid-template-columns: 1fr; }
-      .article-card img { height: 230px; }
+      .nav-container {
+        flex-direction: column;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 18px;
+      }
+
+      nav a {
+        font-size: 12px;
+      }
+
+      .hero {
+        min-height: 470px;
+      }
+
+      .hero-content {
+        padding: 60px 22px;
+      }
+
+      .hero p {
+        font-size: 14px;
+      }
+
+      .section {
+        padding: 55px 18px;
+      }
+
+      .section-heading h2 {
+        font-size: 29px;
+      }
+
+      .category-grid {
+        gap: 12px;
+      }
+
+      .article-grid {
+        grid-template-columns: 1fr;
+        max-width: 420px;
+      }
+
+      .article-card img {
+        height: 230px;
+      }
     }
   </style>
 </head>
@@ -372,7 +450,7 @@ grid-template-columns: repeat(2, minmax(280px, 380px));
       <nav aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="#categories">Categories</a>
-      <a href="#featured">Latest Articles</a>
+        <a href="#featured">Latest Articles</a>
         <a href="#about">About Us</a>
       </nav>
     </div>
@@ -403,6 +481,7 @@ grid-template-columns: repeat(2, minmax(280px, 380px));
       </div>
 
       <div class="category-grid">
+
         <a href="uae-travel.html" class="category">
           <div class="symbol">🏙️</div>
           <h3>UAE Travel</h3>
@@ -426,11 +505,13 @@ grid-template-columns: repeat(2, minmax(280px, 380px));
           <h3>Saudi Arabia</h3>
           <p>Makkah, Madinah and essential travel tips.</p>
         </a>
+
       </div>
     </section>
 
     <section class="featured-section" id="featured">
       <div class="section">
+
         <div class="section-heading">
           <span>Travel Knowledge & Inspiration</span>
           <h2>Featured Travel Guides</h2>
@@ -439,31 +520,54 @@ grid-template-columns: repeat(2, minmax(280px, 380px));
 
         <div class="article-grid">
 
-<article class="article-card">
-  <img src="umrah-hotel-confirmation.png"
-       alt="Umrah hotel confirmation overlooking Masjid Al Haram">
+          <!-- ARTICLE 1 -->
 
-  <div class="article-content">
-    <span class="article-category">Umrah Guides</span>
-
-    <h3>The Hotel Confirmation Details Every Umrah Traveller Should Verify</h3>
-
-    <p>A practical checklist to help pilgrims review hotel bookings, room arrangements and accommodation details before travelling to Makkah and Madinah.</p>
-
-    <a href="umrah-hotel-confirmation.html" class="read-more">READ ARTICLE →</a>
-  </div>
-</article>
           <article class="article-card">
-  <img
-    src="travel-document-folder-international-trip.png"
-    alt="Organised international travel document folder with passport and flight details">
-  <div class="article-content">
-    <span class="article-category">UAE Travel Guides</span>
-    <h3>How to Organise a Travel Document Folder Before an International Trip</h3>
-    <p>A practical guide to organising passports, flight confirmations, accommodation records and digital backups before international travel.</p>
-    <a href="travel-document-folder-international-trip.html" class="read-more">READ ARTICLE →</a>
-  </div>
-</article>
+            <img
+              src="umrah-hotel-confirmation.png"
+              alt="Umrah hotel confirmation overlooking Masjid Al Haram">
+
+            <div class="article-content">
+              <span class="article-category">Umrah Guides</span>
+
+              <h3>The Hotel Confirmation Details Every Umrah Traveller Should Verify</h3>
+
+              <p>
+                A practical checklist to help pilgrims review hotel bookings,
+                room arrangements and accommodation details before travelling
+                to Makkah and Madinah.
+              </p>
+
+              <a href="umrah-hotel-confirmation.html" class="read-more">
+                READ ARTICLE →
+              </a>
+            </div>
+          </article>
+
+          <!-- ARTICLE 2 -->
+
+          <article class="article-card">
+            <img
+              src="travel-document-folder-international-trip.png"
+              alt="Organised international travel document folder with passport and flight details">
+
+            <div class="article-content">
+              <span class="article-category">UAE Travel Guides</span>
+
+              <h3>How to Organise a Travel Document Folder Before an International Trip</h3>
+
+              <p>
+                A practical guide to organising passports, flight confirmations,
+                accommodation records and digital backups before international
+                travel.
+              </p>
+
+              <a href="travel-document-folder-international-trip.html" class="read-more">
+                READ ARTICLE →
+              </a>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
@@ -471,7 +575,9 @@ grid-template-columns: repeat(2, minmax(280px, 380px));
     <section class="about" id="about">
       <div class="about-inner">
         <div class="eyebrow">About The Journal</div>
+
         <h2>Information That Makes Every Journey Better</h2>
+
         <p>
           The UAE & Umrah Journal is an independent travel information
           publication created to share practical guides, useful travel
@@ -483,8 +589,12 @@ grid-template-columns: repeat(2, minmax(280px, 380px));
   </main>
 
   <footer>
-    <div class="footer-logo">THE UAE <span>&</span> UMRAH JOURNAL</div>
+    <div class="footer-logo">
+      THE UAE <span>&</span> UMRAH JOURNAL
+    </div>
+
     <p>Travel guides, useful information and meaningful journeys.</p>
+
     <p class="copyright">
       © 2026 The UAE & Umrah Journal. All rights reserved.
     </p>
