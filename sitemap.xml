@@ -30,5 +30,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  
+  <url>
+    <loc>https://uaeumrahguide.github.io/uae-umrah-travel-guide/makkah-madinah-spiritual-cultural-significance.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 
 </urlset>
